@@ -9,12 +9,15 @@ import java.util.*;
 import java.io.*;
 import java.awt.Color;
 
-/** 
- * Draws pictures on the graphics pane
- *
+/** Draws pictures on the graphics pane
  */
 public class Lollipop{
-
+    public static final double X = 300.0;       // horizontal center of lollipop
+    public static final double Y = 180.0;       // vertical center of lollipop
+    public static final double SIZE = 80.0;     // diameter of lollipop
+    public static final double STICK = 200.0;   // length of lollipop stick
+    
+    
     /**
      * Constructor for objects of class Lollipop 
      */
@@ -25,11 +28,11 @@ public class Lollipop{
     
     /** Draws a red lollipop on a stick */
     private void drawLollipop(){
-        UI.setLineWidth(10);            // set line width to 10
-        UI.drawLine(300, 200, 300, 400);// draw line    (300,200) to (300, 400)
-        UI.setLineWidth(1);             // set line width to 1
-        UI.setColor(Color.red);         // set color to red
-        UI.fillOval(260, 160, 80, 80);  // fill oval    @(260, 160), 80x80
+        UI.setLineWidth(SIZE/8.0);          // set line width to 10
+        UI.drawLine(X, Y, X, Y+STICK);      // draw line    (300,200) to (300, 400)
+        UI.setLineWidth(1);                 // set line width to 1
+        UI.setColor(Color.red);             // set color to red
+        UI.fillOval(X-SIZE/2.0, Y-SIZE/2.0, SIZE, SIZE);      // fill oval    @(260, 160), 80x80
     }
 
     public static void main(String[] args){
